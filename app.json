@@ -1,26 +1,44 @@
 {
   "expo": {
-    "name": "amb-app",
+    "name": "AnemiaMuktBharat",
     "slug": "amb-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#f3f3f3",
+      "resizeMode": "cover",
+      "mdpi": "./assets/android/drawable-mdpi/SplashScreen.png",
+      "hdpi": "./assets/android/drawable-hdpi/SplashScreen.png",
+      "xhdpi": "./assets/android/drawable-xhdpi/SplashScreen.png",
+      "xxhdpi": "./assets/android/drawable-xxhdpi/SplashScreen.png",
+      "xxxhdpi": "./assets/android/drawable-xxxhdpi/SplashScreen.png"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "splash": {
+        "backgroundColor": "#f3f3f3",
+        "resizeMode": "contain",
+        "1x": "./assets/ios/SplashScreen.png",
+        "2x": "./assets/ios/SplashScreen@2x.png",
+        "3x": "./assets/ios/SplashScreen@3x.png"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "splash": {
+        "backgroundColor": "#f3f3f3",
+        "resizeMode": "contain",
+        "mdpi": "./assets/android/drawable-mdpi/SplashScreen.png",
+        "hdpi": "./assets/android/drawable-hdpi/SplashScreen.png",
+        "xhdpi": "./assets/android/drawable-xhdpi/SplashScreen.png",
+        "xxhdpi": "./assets/android/drawable-xxhdpi/SplashScreen.png",
+        "xxxhdpi": "./assets/android/drawable-xxxhdpi/SplashScreen.png"
       }
     },
     "web": {
