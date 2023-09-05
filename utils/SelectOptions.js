@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
 
-const SelectOptions = ({ options, placeholder, dropdownPosition }) => {
+const SelectOptions = ({ options, placeholder }) => {
   const [user, setUser] = useState("");
   const [isFocus, setIsFocus] = useState(false);
 

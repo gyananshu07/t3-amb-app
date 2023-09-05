@@ -125,7 +125,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: "Poppins-SemiBold",
   },
-  formGroup: {},
+  fontRegular: { fontFamily: "Poppins-Regular" },
+  fontMedium: { fontFamily: "Poppins-Medium" },
+  fontSemiBold: { fontFamily: "Poppins-SemiBold" },
+  fontBold: { fontFamily: "Poppins-Bold" },
 });
 
 export default styles;

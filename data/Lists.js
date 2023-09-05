@@ -369,3 +369,11 @@ export const subCenterList = [
     value: "",
   },
 ];
+
+export const typeList = [
+  {
+    id: 1,
+    label: "Select Type",
+    value: "",
+  },
+];

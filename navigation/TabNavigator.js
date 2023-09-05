@@ -5,10 +5,10 @@ import HomeScreen from "../screens/TabScreens/HomeScreen";
 import ProfileScreen from "../screens/TabScreens/ProfileScreen";
 import AddBeneficiaryScreen from "../screens/TabScreens/AddBeneficiaryScreen";
 import SOSScreen from "../screens/TabScreens/SOSScreen";
-import NotificationsScreen from "../screens/TabScreens/NotificationsScreen";
 
 import { Entypo, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { StyleSheet } from "react-native";
+import NotificationsTopTabNavigator from "./TopTabNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -26,7 +26,13 @@ const BottomTabNavigator = () => {
         component={HomeScreen}
         options={{
           tabBarLabel: "Home",
-          tabBarIcon: () => <Entypo name="home" size={28} color="#a52a2a" />,
+          tabBarIcon: ({ focused }) => (
+            <Entypo
+              name="home"
+              size={28}
+              color={focused ? "#631919" : "#a52a2a"}
+            />
+          ),
         }}
       />
       <Tab.Screen
@@ -34,8 +40,12 @@ const BottomTabNavigator = () => {
         component={ProfileScreen}
         options={{
           tabBarLabel: "Profile",
-          tabBarIcon: () => (
-            <MaterialCommunityIcons name="account" size={28} color="#a52a2a" />
+          tabBarIcon: ({ focused }) => (
+            <MaterialCommunityIcons
+              name="account"
+              size={28}
+              color={focused ? "#631919" : "#a52a2a"}
+            />
           ),
         }}
       />
@@ -45,8 +55,12 @@ const BottomTabNavigator = () => {
         component={AddBeneficiaryScreen}
         options={{
           tabBarIconStyle: { alignSelf: "center", justifyContent: "center" },
-          tabBarIcon: () => (
-            <Ionicons name="ios-add-circle" size={60} color="#a52a2a" />
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name="ios-add-circle"
+              size={60}
+              color={focused ? "#631919" : "#a52a2a"}
+            />
           ),
           tabBarLabel: () => false,
         }}
@@ -57,22 +71,27 @@ const BottomTabNavigator = () => {
         component={SOSScreen}
         options={{
           tabBarLabel: "SOS",
-          tabBarIcon: () => (
+          tabBarIcon: ({ focused }) => (
             <MaterialCommunityIcons
               name="comment-alert-outline"
               size={28}
-              color="#a52a2a"
+              color={focused ? "#631919" : "#a52a2a"}
             />
           ),
         }}
       />
       <Tab.Screen
         name="Notifications"
-        component={NotificationsScreen}
+        headerShown={true}
+        component={NotificationsTopTabNavigator}
         options={{
           tabBarLabel: "Notifications",
-          tabBarIcon: () => (
-            <MaterialCommunityIcons name="bell" size={28} color="#a52a2a" />
+          tabBarIcon: ({ focused }) => (
+            <MaterialCommunityIcons
+              name="bell"
+              size={28}
+              color={focused ? "#631919" : "#a52a2a"}
+            />
           ),
         }}
       />

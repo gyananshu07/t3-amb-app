@@ -45,7 +45,7 @@ const CustomDrawer = (props) => {
               marginBottom: 5,
             }}
           >
-            Hi! User
+            Hi! Developer
           </Text>
           <Text
             style={{

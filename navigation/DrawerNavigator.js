@@ -38,6 +38,11 @@ const DrawerNavigator = () => {
             marginLeft: -20,
             justifyContent: "center",
           },
+          headerTitleStyle: {
+            fontFamily: "Poppins-SemiBold",
+            color: "#333",
+          },
+          headerTitleAlign: "center",
           headerRightContainerStyle: { paddingHorizontal: 20 },
           headerRight: () => (
             <Pressable onPress={() => console.log("Synced")}>
@@ -53,6 +58,7 @@ const DrawerNavigator = () => {
         <Drawer.Screen
           name="Tab"
           options={{
+            title: "Home",
             drawerLabel: "Home",
             drawerIcon: () => (
               <Ionicons name="home-outline" size={24} color="black" />
