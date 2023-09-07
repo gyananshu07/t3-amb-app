@@ -5,6 +5,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
   },
   drawerItem: {
     width: "100%",
@@ -68,6 +70,18 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     alignItems: "center",
     justifyContent: "center",
+  },
+  fab: {
+    position: "absolute",
+    margin: 16,
+    right: 0,
+    bottom: 0,
+    height: 60,
+    width: 60,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 30,
+    backgroundColor: "white",
   },
   buttonText: {
     color: "#fff",

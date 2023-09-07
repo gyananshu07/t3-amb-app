@@ -52,10 +52,12 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   placeholderStyle: {
-    fontSize: 16,
+    fontSize: 14,
+    fontFamily: "Poppins-Medium",
   },
   selectedTextStyle: {
-    fontSize: 16,
+    fontSize: 14,
+    fontFamily: "Poppins-Medium",
   },
   iconStyle: {
     width: 25,

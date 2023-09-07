@@ -377,3 +377,21 @@ export const typeList = [
     value: "",
   },
 ];
+
+export const complaintList = [
+  {
+    id: 1,
+    label: "Select Complaint Type",
+    value: "",
+  },
+  {
+    id: 2,
+    label: "Digital Hemoglobinometer",
+    value: "digital-meter",
+  },
+  {
+    id: 3,
+    label: "Charger",
+    value: "charger",
+  },
+];

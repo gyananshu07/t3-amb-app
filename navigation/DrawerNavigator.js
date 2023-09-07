@@ -1,16 +1,17 @@
 import React from "react";
+import { Pressable } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
 import { createDrawerNavigator } from "@react-navigation/drawer";
-
 import TabNavigator from "./TabNavigator";
+import CustomDrawer from "../utils/CustomDrawer";
+
 import {
   Ionicons,
   MaterialCommunityIcons,
   MaterialIcons,
 } from "@expo/vector-icons";
-import { Pressable } from "react-native";
-import CustomDrawer from "../utils/CustomDrawer";
-import { StatusBar } from "expo-status-bar";
+
 import AddBeneficiaryScreen from "../screens/TabScreens/AddBeneficiaryScreen";
 import ProfileScreen from "../screens/TabScreens/ProfileScreen";
 import SOSScreen from "../screens/TabScreens/SOSScreen";
@@ -20,6 +21,7 @@ import ChangePasswordScreen from "../screens/DrawerScreens/ChangePasswordScreen"
 import InventoryRequestScreen from "../screens/DrawerScreens/InventoryRequestScreen";
 import AboutUsScreen from "../screens/DrawerScreens/AboutUsScreen";
 import ContactUsScreen from "../screens/DrawerScreens/ContactUsScreen";
+import DownloadMPRScreen from "../screens/DrawerScreens/DownloadMPRScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -154,6 +156,17 @@ const DrawerNavigator = () => {
             ),
           }}
           component={InventoryRequestScreen}
+        />
+
+        <Drawer.Screen
+          name="Download MPR"
+          options={{
+            drawerLabel: "Download MPR",
+            drawerIcon: () => (
+              <MaterialIcons name="file-download" size={24} color="black" />
+            ),
+          }}
+          component={DownloadMPRScreen}
         />
 
         <Drawer.Screen

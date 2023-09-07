@@ -1,12 +1,35 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import React from "react";
+import styles from "../../GlobalStyles";
+import { FontAwesome5 } from "@expo/vector-icons";
+import { FAB, Text, Provider as PaperProvider } from "react-native-paper";
 
-const InventoryRequestScreen = () => {
+import CustomModal from "../../components/InventoryRequest/CustomModal";
+
+const RegisterComplaintScreen = () => {
+  const [visible, setVisible] = React.useState(false);
+
+  const showModal = () => setVisible(!visible);
+  const hideModal = () => setVisible(false);
+
   return (
-    <View>
-      <Text>InventoryRequestScreen</Text>
-    </View>
+    <PaperProvider>
+      <CustomModal onHide={hideModal} visible={visible} />
+
+      <View style={styles.container}>
+        <Text style={[styles.fontMedium, { color: "black" }]}>
+          No Data Found
+        </Text>
+        <FAB
+          rippleColor="white"
+          variant="surface"
+          icon={() => <FontAwesome5 name="plus" size={24} color="#a52a2a" />}
+          style={styles.fab}
+          onPress={showModal}
+        />
+      </View>
+    </PaperProvider>
   );
 };
 
-export default InventoryRequestScreen;
+export default RegisterComplaintScreen;

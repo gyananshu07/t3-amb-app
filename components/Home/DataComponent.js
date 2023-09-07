@@ -1,22 +1,22 @@
 import { StyleSheet, View } from "react-native";
-import { Text } from "react-native-paper";
+import { Surface, Text } from "react-native-paper";
 import React from "react";
 
 const DataComponent = () => {
   return (
     <View style={{ padding: 10, gap: 20 }}>
-      <View style={styles.subCard}>
+      <Surface style={styles.subCard}>
         <Text style={styles.reportSubText}>
           Remaining Follow Up Dues Beneficiary
         </Text>
         <Text variant="headlineSmall" style={{ fontFamily: "Poppins-Bold" }}>
           1
         </Text>
-      </View>
+      </Surface>
 
-      <View style={styles.subCard}>
+      <Surface style={styles.subCard}>
         <Text style={styles.reportSubText}>Inventory Summary</Text>
-      </View>
+      </Surface>
     </View>
   );
 };

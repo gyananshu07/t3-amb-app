@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import React from "react";
-import { Text } from "react-native-paper";
+import { Surface, Text } from "react-native-paper";
 
 const BeneficiaryReport = () => {
   return (
@@ -26,7 +26,7 @@ const BeneficiaryReport = () => {
           justifyContent: "center",
         }}
       >
-        <View
+        <Surface
           style={[
             styles.reportCard,
             {
@@ -36,9 +36,9 @@ const BeneficiaryReport = () => {
         >
           <Text style={styles.reportText}>1</Text>
           <Text style={styles.reportText}>Normal</Text>
-        </View>
+        </Surface>
 
-        <View
+        <Surface
           style={[
             styles.reportCard,
             {
@@ -48,9 +48,9 @@ const BeneficiaryReport = () => {
         >
           <Text style={styles.reportText}>0</Text>
           <Text style={styles.reportText}>Mild</Text>
-        </View>
+        </Surface>
 
-        <View
+        <Surface
           style={[
             styles.reportCard,
             {
@@ -60,9 +60,9 @@ const BeneficiaryReport = () => {
         >
           <Text style={styles.reportText}>0</Text>
           <Text style={styles.reportText}>Moderate</Text>
-        </View>
+        </Surface>
 
-        <View
+        <Surface
           style={[
             styles.reportCard,
             {
@@ -72,7 +72,7 @@ const BeneficiaryReport = () => {
         >
           <Text style={styles.reportText}>0</Text>
           <Text style={styles.reportText}>Severe</Text>
-        </View>
+        </Surface>
       </View>
     </View>
   );

@@ -1,5 +1,4 @@
-import { View, Text } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 const CalendarInput = ({ isVisible, setIsVisible, setSelectedDate }) => {
@@ -8,15 +7,13 @@ const CalendarInput = ({ isVisible, setIsVisible, setSelectedDate }) => {
     setIsVisible(false);
   };
   return (
-    <View>
-      <DateTimePickerModal
-        maximumDate={new Date()}
-        isVisible={isVisible}
-        mode="date"
-        onConfirm={handleConfirm}
-        onCancel={() => setIsVisible(false)}
-      />
-    </View>
+    <DateTimePickerModal
+      maximumDate={new Date()}
+      isVisible={isVisible}
+      mode="date"
+      onConfirm={handleConfirm}
+      onCancel={() => setIsVisible(false)}
+    />
   );
 };
 

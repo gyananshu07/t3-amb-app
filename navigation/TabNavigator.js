@@ -9,6 +9,7 @@ import SOSScreen from "../screens/TabScreens/SOSScreen";
 import { Entypo, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { StyleSheet } from "react-native";
 import NotificationsTopTabNavigator from "./TopTabNavigator";
+import { AddBeneficiaryStackNavigator } from "./StackNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -52,7 +53,7 @@ const BottomTabNavigator = () => {
 
       <Tab.Screen
         name="Add"
-        component={AddBeneficiaryScreen}
+        component={AddBeneficiaryStackNavigator}
         options={{
           tabBarIconStyle: { alignSelf: "center", justifyContent: "center" },
           tabBarIcon: ({ focused }) => (

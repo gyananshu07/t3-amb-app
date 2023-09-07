@@ -1,5 +1,5 @@
 import { StyleSheet, View } from "react-native";
-import { Text } from "react-native-paper";
+import { Surface, Text } from "react-native-paper";
 import React from "react";
 import SelectOptions from "../../utils/SelectOptions";
 import { typeList } from "../../data/Lists";
@@ -7,7 +7,7 @@ import { typeList } from "../../data/Lists";
 const Dashboard = () => {
   return (
     <View style={styles.dashboardContainer}>
-      <View
+      <Surface
         style={{
           backgroundColor: "white",
           borderRadius: 5,
@@ -24,7 +24,7 @@ const Dashboard = () => {
             <SelectOptions options={typeList} />
           </View>
         </View>
-      </View>
+      </Surface>
     </View>
   );
 };

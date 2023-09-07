@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
   text: {
     color: "white",
     fontSize: 18,
+    fontFamily: "Poppins-Medium",
   },
 });
 
