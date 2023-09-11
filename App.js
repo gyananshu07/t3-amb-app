@@ -1,12 +1,15 @@
-import { NavigationContainer, useRoute } from "@react-navigation/native";
+import React, { useCallback } from "react";
+
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import DrawerNavigator from "./navigation/DrawerNavigator";
-import React, { useCallback, useContext, useEffect } from "react";
 import { MainStackNavigator } from "./navigation/StackNavigator";
+
 import { SafeAreaProvider } from "react-native-safe-area-context";
+
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { AuthProvider, useAuth } from "./context/AuthContext";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { AuthProvider } from "./context/AuthContext";
 
 SplashScreen.preventAutoHideAsync();
 

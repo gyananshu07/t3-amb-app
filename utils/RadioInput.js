@@ -2,9 +2,7 @@ import * as React from "react";
 import { StyleSheet, View } from "react-native";
 import { RadioButton, Text } from "react-native-paper";
 
-const RadioInput = ({ first, second }) => {
-  const [value, setValue] = React.useState(first);
-
+const RadioInput = ({ first, second, value, setValue }) => {
   return (
     <RadioButton.Group
       onValueChange={(newValue) => setValue(newValue)}
@@ -36,5 +34,5 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  radioLabel: { fontFamily: "Poppins-SemiBold" },
+  radioLabel: { fontFamily: "Poppins-SemiBold", color: "black" },
 });

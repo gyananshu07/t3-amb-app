@@ -30,7 +30,7 @@ const SOSButton = () => {
     );
 
     buttonScale.value = buttonAnimation;
-  }, []);
+  }, [buttonScale]);
 
   const buttonStyle = useAnimatedStyle(() => {
     return {
@@ -51,36 +51,6 @@ const SOSButton = () => {
 };
 
 const styles = StyleSheet.create({
-  circleContainer: {
-    position: "absolute",
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    backgroundColor: "transparent",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  circle: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: "#a52a2a",
-    position: "absolute",
-  },
-  circle2: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    backgroundColor: "#a52a2a",
-    position: "absolute",
-  },
-  circle3: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    backgroundColor: "#a52a2a",
-    position: "absolute",
-  },
   button: {
     width: 100,
     height: 100,

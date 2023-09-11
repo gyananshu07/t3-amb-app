@@ -10,6 +10,7 @@ import NotificationsTopTabNavigator from "./TopTabNavigator";
 import RegisterComplaintScreen from "../screens/DrawerScreens/RegisterComplaintScreen";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import BeneficiarySearchScreen from "../screens/DrawerScreens/BeneficiarySearchScreen";
 const Tab = createBottomTabNavigator();
 
 const HomeTabNavigator = () => {
@@ -19,6 +20,7 @@ const HomeTabNavigator = () => {
         headerShown: false,
         tabBarLabelStyle: styles.tabBarLabelStyle,
         tabBarStyle: styles.tabBarStyle,
+        tabBarLabelPosition: "below-icon",
       }}
     >
       <Tab.Screen
@@ -100,6 +102,110 @@ const HomeTabNavigator = () => {
   );
 };
 
+const BeneficiarySearchTabNavigator = () => {
+  return (
+    <Tab.Navigator
+      initialRouteName="BeneficiarySearch"
+      screenOptions={{
+        headerShown: false,
+        tabBarLabelStyle: styles.tabBarLabelStyle,
+        tabBarStyle: styles.tabBarStyle,
+        tabBarLabelPosition: "below-icon",
+      }}
+    >
+      <Tab.Screen
+        name="BeneficiarySearch"
+        component={BeneficiarySearchScreen}
+        options={{
+          tabBarLabel: "Beneficiary Search",
+          tabBarItemStyle: { display: "none" },
+          tabBarIcon: ({ focused }) => (
+            <Entypo
+              name="home"
+              size={28}
+              color={focused ? "#631919" : "#a52a2a"}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: "Home",
+          tabBarIcon: ({ focused }) => (
+            <Entypo
+              name="home"
+              size={28}
+              color={focused ? "#631919" : "#a52a2a"}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          tabBarLabel: "Profile",
+          tabBarIcon: ({ focused }) => (
+            <MaterialCommunityIcons
+              name="account"
+              size={28}
+              color={focused ? "#631919" : "#a52a2a"}
+            />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Add"
+        component={AddBeneficiaryStackNavigator}
+        options={{
+          tabBarIconStyle: { alignSelf: "center", justifyContent: "center" },
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name="ios-add-circle"
+              size={60}
+              color={focused ? "#631919" : "#a52a2a"}
+            />
+          ),
+          tabBarLabel: () => false,
+        }}
+      />
+
+      <Tab.Screen
+        name="SOS"
+        component={SOSScreen}
+        options={{
+          tabBarLabel: "SOS",
+          tabBarIcon: ({ focused }) => (
+            <MaterialCommunityIcons
+              name="comment-alert-outline"
+              size={28}
+              color={focused ? "#631919" : "#a52a2a"}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Notifications"
+        headerShown={true}
+        component={NotificationsTopTabNavigator}
+        options={{
+          tabBarLabel: "Notifications",
+          tabBarIcon: ({ focused }) => (
+            <MaterialCommunityIcons
+              name="bell"
+              size={28}
+              color={focused ? "#631919" : "#a52a2a"}
+            />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+};
+
 const ProfileTabNavigator = () => {
   return (
     <Tab.Navigator
@@ -108,6 +214,7 @@ const ProfileTabNavigator = () => {
         headerShown: false,
         tabBarLabelStyle: styles.tabBarLabelStyle,
         tabBarStyle: styles.tabBarStyle,
+        tabBarLabelPosition: "below-icon",
       }}
     >
       <Tab.Screen
@@ -196,6 +303,7 @@ const SOSTabNavigator = () => {
         headerShown: false,
         tabBarLabelStyle: styles.tabBarLabelStyle,
         tabBarStyle: styles.tabBarStyle,
+        tabBarLabelPosition: "below-icon",
       }}
     >
       <Tab.Screen
@@ -284,6 +392,7 @@ const RegisterComplaintTabNavigator = () => {
         headerShown: false,
         tabBarLabelStyle: styles.tabBarLabelStyle,
         tabBarStyle: styles.tabBarStyle,
+        tabBarLabelPosition: "below-icon",
       }}
     >
       <Tab.Screen
@@ -373,6 +482,7 @@ const RegisterComplaintTabNavigator = () => {
 
 export {
   HomeTabNavigator,
+  BeneficiarySearchTabNavigator,
   ProfileTabNavigator,
   SOSTabNavigator,
   RegisterComplaintTabNavigator,
@@ -381,15 +491,18 @@ export {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexWrap: "nowrap",
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
   tabBarStyle: {
     height: 60,
+    flexWrap: "nowrap",
   },
   tabBarLabelStyle: {
     fontFamily: "Poppins-SemiBold",
+    flexWrap: "nowrap",
     color: "#333",
     fontSize: 13,
   },

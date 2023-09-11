@@ -14,9 +14,26 @@ import styles from "../../GlobalStyles";
 
 import { casteList, genderList, villageList } from "../../data/Lists";
 
+import * as ImagePicker from "expo-image-picker";
+
 const Form = () => {
   const [open, setOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(undefined);
+  const [image, setImage] = useState(null);
+
+  const pickImage = async () => {
+    // No permissions request is necessary for launching the image library
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setImage(result.assets[0].uri);
+    }
+  };
 
   const currentAge = new Date() - selectedDate;
   // 0 Years 8 Months 0 Days
@@ -75,7 +92,7 @@ const Form = () => {
       </View>
 
       <View style={styles.formContainer}>
-        <Pressable style={styles.row} onPress={() => console.log("Scan")}>
+        <Pressable style={styles.row} onPress={pickImage}>
           <MaterialIcons name="qr-code-scanner" size={24} color="black" />
           <Text
             variant="bodySmall"

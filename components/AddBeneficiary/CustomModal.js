@@ -6,8 +6,8 @@ import {
   StyleSheet,
   View,
 } from "react-native";
-import React, { useState } from "react";
-import { Modal, Portal, Surface, Text, TextInput } from "react-native-paper";
+import React from "react";
+import { Modal, Portal, Surface, Text } from "react-native-paper";
 import { Entypo } from "@expo/vector-icons";
 import styles from "../../GlobalStyles";
 import { useNavigation } from "@react-navigation/native";
@@ -121,13 +121,6 @@ const modalStyles = StyleSheet.create({
     marginHorizontal: 30,
     borderRadius: 5,
     height: "max-content",
-  },
-  contentContainer: {
-    backgroundColor: "white",
-    padding: 15,
-    borderRadius: 5,
-    height: "max-content",
-    gap: 10,
   },
   topHeader: {
     flexDirection: "row",

@@ -13,6 +13,7 @@ const CustomModal = ({ onHide, visible }) => {
   return (
     <Portal>
       <Modal
+        transparent={true}
         visible={visible}
         onDismiss={onHide}
         contentContainerStyle={complaintStyles.containerStyle}

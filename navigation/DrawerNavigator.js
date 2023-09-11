@@ -4,14 +4,12 @@ import { StatusBar } from "expo-status-bar";
 
 import CustomDrawer from "../utils/CustomDrawer";
 import {
+  BeneficiarySearchTabNavigator,
   HomeTabNavigator,
   ProfileTabNavigator,
   RegisterComplaintTabNavigator,
   SOSTabNavigator,
 } from "./TabNavigator";
-
-import AddBeneficiaryScreen from "../screens/TabScreens/AddBeneficiaryScreen";
-import DownloadMPRScreen from "../screens/DrawerScreens/DownloadMPRScreen";
 import {
   AboutStackNavigator,
   ChangePasswordStackNavigator,
@@ -19,6 +17,8 @@ import {
   CounselingStackNavigator,
   InventoryRequestStackNavigator,
 } from "./StackNavigator";
+
+import DownloadMPRScreen from "../screens/DrawerScreens/DownloadMPRScreen";
 
 import {
   Ionicons,
@@ -68,27 +68,31 @@ const DrawerNavigator = () => {
           options={{
             title: "User Name",
             drawerLabel: "Home",
-            drawerIcon: () => (
-              <Ionicons name="home-outline" size={24} color="black" />
+            drawerIcon: ({ focused }) => (
+              <Ionicons
+                name="home-outline"
+                size={24}
+                color={focused ? "#a52a2a" : "black"}
+              />
             ),
           }}
           component={HomeTabNavigator}
         />
 
         <Drawer.Screen
-          name="SearchBeneficiary"
+          name="SearchBeneficiaryTab"
           options={{
             title: "Beneficiary Search",
             drawerLabel: "Beneficiary",
-            drawerIcon: () => (
+            drawerIcon: ({ focused }) => (
               <MaterialCommunityIcons
                 name="clipboard-edit-outline"
                 size={24}
-                color="black"
+                color={focused ? "#a52a2a" : "black"}
               />
             ),
           }}
-          component={AddBeneficiaryScreen}
+          component={BeneficiarySearchTabNavigator}
         />
 
         <Drawer.Screen
@@ -96,11 +100,11 @@ const DrawerNavigator = () => {
           options={{
             title: "Profile",
             drawerLabel: "Profile",
-            drawerIcon: () => (
+            drawerIcon: ({ focused }) => (
               <MaterialCommunityIcons
                 name="account-outline"
                 size={24}
-                color="black"
+                color={focused ? "#a52a2a" : "black"}
               />
             ),
           }}
@@ -112,11 +116,11 @@ const DrawerNavigator = () => {
           options={{
             title: "SOS",
             drawerLabel: "SOS",
-            drawerIcon: () => (
+            drawerIcon: ({ focused }) => (
               <MaterialCommunityIcons
                 name="comment-alert-outline"
                 size={24}
-                color="black"
+                color={focused ? "#a52a2a" : "black"}
               />
             ),
           }}
@@ -129,8 +133,12 @@ const DrawerNavigator = () => {
             title: "Counseling",
             drawerLabel: "Counseling",
             headerShown: false,
-            drawerIcon: () => (
-              <MaterialCommunityIcons name="headset" size={24} color="black" />
+            drawerIcon: ({ focused }) => (
+              <MaterialCommunityIcons
+                name="headset"
+                size={24}
+                color={focused ? "#a52a2a" : "black"}
+              />
             ),
           }}
           component={CounselingStackNavigator}
@@ -141,8 +149,12 @@ const DrawerNavigator = () => {
           options={{
             title: "Register Complaint",
             drawerLabel: "Register Complaint",
-            drawerIcon: () => (
-              <MaterialIcons name="report-problem" size={24} color="black" />
+            drawerIcon: ({ focused }) => (
+              <MaterialIcons
+                name="report-problem"
+                size={24}
+                color={focused ? "#a52a2a" : "black"}
+              />
             ),
           }}
           component={RegisterComplaintTabNavigator}
@@ -154,8 +166,12 @@ const DrawerNavigator = () => {
             title: "Change Password",
             drawerLabel: "Change Password",
             headerShown: false,
-            drawerIcon: () => (
-              <MaterialIcons name="lock-outline" size={24} color="black" />
+            drawerIcon: ({ focused }) => (
+              <MaterialIcons
+                name="lock-outline"
+                size={24}
+                color={focused ? "#a52a2a" : "black"}
+              />
             ),
           }}
           component={ChangePasswordStackNavigator}
@@ -167,8 +183,12 @@ const DrawerNavigator = () => {
             title: "Inventory Request",
             drawerLabel: "Inventory Request",
             headerShown: false,
-            drawerIcon: () => (
-              <MaterialIcons name="inventory" size={24} color="black" />
+            drawerIcon: ({ focused }) => (
+              <MaterialIcons
+                name="inventory"
+                size={24}
+                color={focused ? "#a52a2a" : "black"}
+              />
             ),
           }}
           component={InventoryRequestStackNavigator}
@@ -179,8 +199,12 @@ const DrawerNavigator = () => {
           options={{
             drawerLabel: "Download MPR",
             headerShown: false,
-            drawerIcon: () => (
-              <MaterialIcons name="file-download" size={24} color="black" />
+            drawerIcon: ({ focused }) => (
+              <MaterialIcons
+                name="file-download"
+                size={24}
+                color={focused ? "#a52a2a" : "black"}
+              />
             ),
           }}
           component={DownloadMPRScreen}
@@ -192,11 +216,11 @@ const DrawerNavigator = () => {
             title: "About Us",
             drawerLabel: "About Us",
             headerShown: false,
-            drawerIcon: () => (
+            drawerIcon: ({ focused }) => (
               <MaterialCommunityIcons
                 name="information-variant"
                 size={24}
-                color="black"
+                color={focused ? "#a52a2a" : "black"}
               />
             ),
           }}
@@ -209,8 +233,12 @@ const DrawerNavigator = () => {
             title: "Contact Us",
             drawerLabel: "Contact Us",
             headerShown: false,
-            drawerIcon: () => (
-              <MaterialCommunityIcons name="phone" size={24} color="black" />
+            drawerIcon: ({ focused }) => (
+              <MaterialCommunityIcons
+                name="phone"
+                size={24}
+                color={focused ? "#a52a2a" : "black"}
+              />
             ),
           }}
           component={ContactStackNavigator}
