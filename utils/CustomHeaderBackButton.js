@@ -4,7 +4,7 @@ import { TouchableOpacity, View } from "react-native";
 import { Text } from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
 
-const CustomHeaderBackButton = () => {
+const CustomHeaderBackButton = ({ color }) => {
   const navigation = useNavigation();
 
   const handleBack = () => {
@@ -13,7 +13,7 @@ const CustomHeaderBackButton = () => {
 
   return (
     <TouchableOpacity onPress={handleBack}>
-      <Ionicons name="arrow-back-circle-sharp" size={28} color="white" />
+      <Ionicons name="arrow-back-circle-outline" size={28} color={color} />
     </TouchableOpacity>
   );
 };

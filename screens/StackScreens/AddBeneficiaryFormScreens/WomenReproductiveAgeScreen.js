@@ -1,14 +1,20 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView } from "react-native";
 import React from "react";
+
+import { SafeAreaView } from "react-native-safe-area-context";
+import Form from "../../../components/AddBeneficiary/Form";
 
 const WomenReproductiveAgeScreen = () => {
   return (
-    <View>
-      <Text>WomenReproductiveAgeScreen</Text>
-    </View>
+    <SafeAreaView>
+      <ScrollView
+        contentContainerStyle={{ gap: 20, paddingVertical: 10 }}
+        showsVerticalScrollIndicator={false}
+      >
+        <Form />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
 export default WomenReproductiveAgeScreen;
-
-const styles = StyleSheet.create({});

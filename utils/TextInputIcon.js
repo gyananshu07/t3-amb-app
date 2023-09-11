@@ -6,7 +6,6 @@ const TextInputIcon = ({ label, inputIcon, placeholder, ...rest }) => {
   return (
     <TextInput
       mode="outlined"
-      selectionColor="#a52a2a"
       outlineColor="#a52a2a"
       activeOutlineColor="#a52a2a"
       contentStyle={{ fontFamily: "Poppins-Regular" }}

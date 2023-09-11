@@ -395,3 +395,39 @@ export const complaintList = [
     value: "charger",
   },
 ];
+
+export const casteList = [
+  {
+    id: 1,
+    label: "Select Caste",
+    value: "",
+  },
+  {
+    id: 2,
+    label: "General",
+    value: "general",
+  },
+  {
+    id: 3,
+    label: "Scheduled Caste (SC)",
+    value: "sc",
+  },
+  {
+    id: 4,
+    label: "Scheduled Tribe (ST)",
+    value: "st",
+  },
+  {
+    id: 5,
+    label: "Other",
+    value: "other",
+  },
+];
+
+export const villageList = [
+  {
+    id: 1,
+    label: "Select Village",
+    value: "",
+  },
+];

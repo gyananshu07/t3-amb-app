@@ -6,7 +6,7 @@ import {
   View,
 } from "react-native";
 import { Card, Text } from "react-native-paper";
-import React from "react";
+import React, { useEffect } from "react";
 import image from "../../assets/Screen1.png";
 import styles from "../../GlobalStyles";
 import { StatusBar } from "expo-status-bar";

@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     color: "#333",
     fontFamily: "Poppins-Regular",
   },
-  row: { flexDirection: "row", alignItems: "center" },
+  row: { flexDirection: "row", alignItems: "center", gap: 5 },
   boldText: { fontSize: 16, fontFamily: "Poppins-Bold" },
   textCenter: { textAlign: "center" },
   separator: {

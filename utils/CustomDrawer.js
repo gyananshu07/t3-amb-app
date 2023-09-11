@@ -6,12 +6,15 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+
 import {
   DrawerContentScrollView,
   DrawerItemList,
 } from "@react-navigation/drawer";
+
 import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
+
 import styles from "../GlobalStyles";
 
 const CustomDrawer = (props) => {

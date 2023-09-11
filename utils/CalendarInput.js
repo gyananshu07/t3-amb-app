@@ -13,6 +13,7 @@ const CalendarInput = ({ isVisible, setIsVisible, setSelectedDate }) => {
       mode="date"
       onConfirm={handleConfirm}
       onCancel={() => setIsVisible(false)}
+      v
     />
   );
 };

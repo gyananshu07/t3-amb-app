@@ -7,7 +7,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const CounselingScreen = () => {
   return (
     <SafeAreaView style={counselingStyles.container}>
-      <ScrollView style={{ marginHorizontal: 20 }}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ marginHorizontal: 20 }}
+      >
         <SubHeader text="Women of Reproductive Age" />
         <CustomVideoCard imageSource="../../assets/icons/LogoAmb.png" />
 

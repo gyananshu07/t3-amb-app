@@ -1,8 +1,9 @@
-import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import TodaysNotificationsScreen from "../screens/TopTabs/TodaysNotificationsScreen";
-import AllNotificationsScreen from "../screens/TopTabs/AllNotificationsScreen";
 import { StyleSheet } from "react-native";
 
+import TodaysNotificationsScreen from "../screens/TopTabs/TodaysNotificationsScreen";
+import AllNotificationsScreen from "../screens/TopTabs/AllNotificationsScreen";
+
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 const Tab = createMaterialTopTabNavigator();
 
 function NotificationsTopTabNavigator() {

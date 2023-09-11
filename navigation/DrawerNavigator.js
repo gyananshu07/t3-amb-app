@@ -2,9 +2,23 @@ import React from "react";
 import { Pressable } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import TabNavigator from "./TabNavigator";
 import CustomDrawer from "../utils/CustomDrawer";
+import {
+  HomeTabNavigator,
+  ProfileTabNavigator,
+  RegisterComplaintTabNavigator,
+  SOSTabNavigator,
+} from "./TabNavigator";
+
+import AddBeneficiaryScreen from "../screens/TabScreens/AddBeneficiaryScreen";
+import DownloadMPRScreen from "../screens/DrawerScreens/DownloadMPRScreen";
+import {
+  AboutStackNavigator,
+  ChangePasswordStackNavigator,
+  ContactStackNavigator,
+  CounselingStackNavigator,
+  InventoryRequestStackNavigator,
+} from "./StackNavigator";
 
 import {
   Ionicons,
@@ -12,18 +26,34 @@ import {
   MaterialIcons,
 } from "@expo/vector-icons";
 
-import AddBeneficiaryScreen from "../screens/TabScreens/AddBeneficiaryScreen";
-import ProfileScreen from "../screens/TabScreens/ProfileScreen";
-import SOSScreen from "../screens/TabScreens/SOSScreen";
-import CounselingScreen from "../screens/DrawerScreens/CounselingScreen";
-import RegisterComplaint from "../screens/DrawerScreens/RegisterComplaintScreen";
-import ChangePasswordScreen from "../screens/DrawerScreens/ChangePasswordScreen";
-import InventoryRequestScreen from "../screens/DrawerScreens/InventoryRequestScreen";
-import AboutUsScreen from "../screens/DrawerScreens/AboutUsScreen";
-import ContactUsScreen from "../screens/DrawerScreens/ContactUsScreen";
-import DownloadMPRScreen from "../screens/DrawerScreens/DownloadMPRScreen";
-
+import { createDrawerNavigator } from "@react-navigation/drawer";
 const Drawer = createDrawerNavigator();
+
+const screenOptions = {
+  drawerActiveTintColor: "#333",
+  drawerInactiveTintColor: "#333",
+  drawerLabelStyle: {
+    fontFamily: "Poppins-Medium",
+    fontSize: 15,
+    marginLeft: -20,
+    justifyContent: "center",
+  },
+  headerTitleStyle: {
+    fontFamily: "Poppins-SemiBold",
+    color: "#333",
+  },
+  headerTitleAlign: "center",
+  headerRightContainerStyle: { paddingHorizontal: 20 },
+  headerRight: () => (
+    <Pressable onPress={() => console.log("Synced")}>
+      <MaterialCommunityIcons
+        name="cloud-sync-outline"
+        size={30}
+        color="black"
+      />
+    </Pressable>
+  ),
+};
 
 const DrawerNavigator = () => {
   return (
@@ -31,47 +61,24 @@ const DrawerNavigator = () => {
       <StatusBar translucent backgroundColor="#a52a2a" style="light" />
       <Drawer.Navigator
         drawerContent={(props) => <CustomDrawer {...props} />}
-        screenOptions={{
-          drawerActiveTintColor: "#333",
-          drawerInactiveTintColor: "#333",
-          drawerLabelStyle: {
-            fontFamily: "Poppins-Medium",
-            fontSize: 15,
-            marginLeft: -20,
-            justifyContent: "center",
-          },
-          headerTitleStyle: {
-            fontFamily: "Poppins-SemiBold",
-            color: "#333",
-          },
-          headerTitleAlign: "center",
-          headerRightContainerStyle: { paddingHorizontal: 20 },
-          headerRight: () => (
-            <Pressable onPress={() => console.log("Synced")}>
-              <MaterialCommunityIcons
-                name="cloud-sync-outline"
-                size={30}
-                color="black"
-              />
-            </Pressable>
-          ),
-        }}
+        screenOptions={screenOptions}
       >
         <Drawer.Screen
-          name="Tab"
+          name="HomeTab"
           options={{
-            title: "Home",
+            title: "User Name",
             drawerLabel: "Home",
             drawerIcon: () => (
               <Ionicons name="home-outline" size={24} color="black" />
             ),
           }}
-          component={TabNavigator}
+          component={HomeTabNavigator}
         />
 
         <Drawer.Screen
-          name="Beneficiary"
+          name="SearchBeneficiary"
           options={{
+            title: "Beneficiary Search",
             drawerLabel: "Beneficiary",
             drawerIcon: () => (
               <MaterialCommunityIcons
@@ -85,8 +92,9 @@ const DrawerNavigator = () => {
         />
 
         <Drawer.Screen
-          name="Profile"
+          name="ProfileTab"
           options={{
+            title: "Profile",
             drawerLabel: "Profile",
             drawerIcon: () => (
               <MaterialCommunityIcons
@@ -96,12 +104,13 @@ const DrawerNavigator = () => {
               />
             ),
           }}
-          component={ProfileScreen}
+          component={ProfileTabNavigator}
         />
 
         <Drawer.Screen
-          name="SOS"
+          name="SOSTab"
           options={{
+            title: "SOS",
             drawerLabel: "SOS",
             drawerIcon: () => (
               <MaterialCommunityIcons
@@ -111,57 +120,65 @@ const DrawerNavigator = () => {
               />
             ),
           }}
-          component={SOSScreen}
+          component={SOSTabNavigator}
         />
 
         <Drawer.Screen
-          name="Counseling"
+          name="CounselingStack"
           options={{
+            title: "Counseling",
             drawerLabel: "Counseling",
+            headerShown: false,
             drawerIcon: () => (
               <MaterialCommunityIcons name="headset" size={24} color="black" />
             ),
           }}
-          component={CounselingScreen}
+          component={CounselingStackNavigator}
         />
 
         <Drawer.Screen
-          name="Register Complaint"
+          name="RegisterComplaintTab"
           options={{
+            title: "Register Complaint",
             drawerLabel: "Register Complaint",
             drawerIcon: () => (
               <MaterialIcons name="report-problem" size={24} color="black" />
             ),
           }}
-          component={RegisterComplaint}
+          component={RegisterComplaintTabNavigator}
         />
 
         <Drawer.Screen
-          name="Change Password"
+          name="ChangePasswordStack"
           options={{
+            title: "Change Password",
             drawerLabel: "Change Password",
+            headerShown: false,
             drawerIcon: () => (
               <MaterialIcons name="lock-outline" size={24} color="black" />
             ),
           }}
-          component={ChangePasswordScreen}
+          component={ChangePasswordStackNavigator}
         />
 
         <Drawer.Screen
-          name="Inventory Request"
+          name="InventoryRequestStack"
           options={{
+            title: "Inventory Request",
             drawerLabel: "Inventory Request",
+            headerShown: false,
             drawerIcon: () => (
               <MaterialIcons name="inventory" size={24} color="black" />
             ),
           }}
-          component={InventoryRequestScreen}
+          component={InventoryRequestStackNavigator}
         />
 
         <Drawer.Screen
           name="Download MPR"
           options={{
             drawerLabel: "Download MPR",
+            headerShown: false,
             drawerIcon: () => (
               <MaterialIcons name="file-download" size={24} color="black" />
             ),
@@ -170,9 +187,11 @@ const DrawerNavigator = () => {
         />
 
         <Drawer.Screen
-          name="About Us"
+          name="AboutUsStack"
           options={{
+            title: "About Us",
             drawerLabel: "About Us",
+            headerShown: false,
             drawerIcon: () => (
               <MaterialCommunityIcons
                 name="information-variant"
@@ -181,18 +200,20 @@ const DrawerNavigator = () => {
               />
             ),
           }}
-          component={AboutUsScreen}
+          component={AboutStackNavigator}
         />
 
         <Drawer.Screen
-          name="Contact Us"
+          name="ContactUsStack"
           options={{
+            title: "Contact Us",
             drawerLabel: "Contact Us",
+            headerShown: false,
             drawerIcon: () => (
               <MaterialCommunityIcons name="phone" size={24} color="black" />
             ),
           }}
-          component={ContactUsScreen}
+          component={ContactStackNavigator}
         />
       </Drawer.Navigator>
     </>

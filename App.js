@@ -1,16 +1,18 @@
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, useRoute } from "@react-navigation/native";
 import DrawerNavigator from "./navigation/DrawerNavigator";
-import React, { useCallback } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import { MainStackNavigator } from "./navigation/StackNavigator";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import { AuthProvider, useAuth } from "./context/AuthContext";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 SplashScreen.preventAutoHideAsync();
 
-export default function App() {
-  const [showOnboarding, setShowOnboarding] = React.useState(true);
+const Stack = createNativeStackNavigator();
 
+export default function App() {
   const [isLoaded] = useFonts({
     "Poppins-Regular": require("./assets/fonts/Poppins-Regular.ttf"),
     "Poppins-Medium": require("./assets/fonts/Poppins-Medium.ttf"),
@@ -32,7 +34,20 @@ export default function App() {
     <>
       <SafeAreaProvider onLayout={handleOnLayout}>
         <NavigationContainer>
-          {showOnboarding ? <MainStackNavigator /> : <DrawerNavigator />}
+          <AuthProvider>
+            <Stack.Navigator initialRouteName="MainStack">
+              <Stack.Screen
+                name="SplashStack"
+                component={MainStackNavigator}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="Drawer"
+                component={DrawerNavigator}
+                options={{ headerShown: false }}
+              />
+            </Stack.Navigator>
+          </AuthProvider>
         </NavigationContainer>
       </SafeAreaProvider>
     </>

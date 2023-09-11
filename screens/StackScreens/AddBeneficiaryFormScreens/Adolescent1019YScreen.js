@@ -1,14 +1,20 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView } from "react-native";
 import React from "react";
+
+import { SafeAreaView } from "react-native-safe-area-context";
+import Form from "../../../components/AddBeneficiary/Form";
 
 const Adolescent1019YScreen = () => {
   return (
-    <View>
-      <Text>Adolescent1019YScreen</Text>
-    </View>
+    <SafeAreaView>
+      <ScrollView
+        contentContainerStyle={{ gap: 20, paddingVertical: 10 }}
+        showsVerticalScrollIndicator={false}
+      >
+        <Form />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
 export default Adolescent1019YScreen;
-
-const styles = StyleSheet.create({});

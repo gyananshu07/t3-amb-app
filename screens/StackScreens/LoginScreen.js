@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ImageBackground, Pressable, ScrollView, View } from "react-native";
@@ -10,14 +10,16 @@ import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { AuthContext, useAuth } from "../../context/AuthContext";
 
 const LoginScreen = () => {
   const [loginValues, setLoginValues] = useState({
-    mobile: "",
-    password: "",
+    mobile: "99999 99999",
+    password: "12345678",
   });
   const [secureTextEntry, setSecureTextEntry] = useState(true);
   const navigation = useNavigation();
+  const { login } = useAuth();
 
   const handleForgotPress = () => {
     navigation.navigate("ForgotPassword");
@@ -55,7 +57,9 @@ const LoginScreen = () => {
             </Text>
             <Formik
               initialValues={loginValues}
-              onSubmit={(values) => navigation.navigate("Drawer")}
+              onSubmit={(values) => {
+                navigation.navigate("Drawer");
+              }}
             >
               {({ handleChange, handleSubmit, values }) => (
                 <View style={styles.formContainer}>

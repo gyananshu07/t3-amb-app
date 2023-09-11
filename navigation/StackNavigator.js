@@ -1,13 +1,11 @@
 import * as React from "react";
 
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import DrawerNavigator from "./DrawerNavigator";
-
+import SplashScreen from "../screens/StackScreens/SplashScreen";
 import LoginScreen from "../screens/StackScreens/LoginScreen";
 import RegisterScreen from "../screens/StackScreens/RegisterScreen";
 import ForgotScreen from "../screens/StackScreens/ForgotScreen";
-import SplashScreen from "../screens/StackScreens/SplashScreen";
 
+import AddBeneficiaryScreen from "../screens/TabScreens/AddBeneficiaryScreen";
 import Children659MScreen from "../screens/StackScreens/AddBeneficiaryFormScreens/Children659MScreen";
 import Children59YScreen from "../screens/StackScreens/AddBeneficiaryFormScreens/Children59YScreen";
 import Adolescent1019YScreen from "../screens/StackScreens/AddBeneficiaryFormScreens/Adolescent1019YScreen";
@@ -17,8 +15,16 @@ import WomenReproductiveAgeScreen from "../screens/StackScreens/AddBeneficiaryFo
 import MedicalTeamScreen from "../screens/StackScreens/AddBeneficiaryFormScreens/MedicalTeamScreen";
 import OthersScreen from "../screens/StackScreens/AddBeneficiaryFormScreens/OthersScreen";
 
+import CounselingScreen from "../screens/DrawerScreens/CounselingScreen";
+import ChangePasswordScreen from "../screens/DrawerScreens/ChangePasswordScreen";
+import InventoryRequestScreen from "../screens/DrawerScreens/InventoryRequestScreen";
+import AboutUsScreen from "../screens/DrawerScreens/AboutUsScreen";
+import ContactUsScreen from "../screens/DrawerScreens/ContactUsScreen";
+
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import CustomHeaderBackButton from "../utils/CustomHeaderBackButton";
-import AddBeneficiaryScreen from "../screens/TabScreens/AddBeneficiaryScreen";
+
+const Stack = createNativeStackNavigator();
 
 const screenOptionStyle = {
   headerStyle: {
@@ -30,10 +36,8 @@ const screenOptionStyle = {
   },
   headerTitleAlign: "center",
   headerTintColor: "white",
-  headerLeft: () => <CustomHeaderBackButton />,
+  headerLeft: () => <CustomHeaderBackButton color="white" />,
 };
-
-const Stack = createNativeStackNavigator();
 
 const MainStackNavigator = () => {
   return (
@@ -61,25 +65,18 @@ const MainStackNavigator = () => {
           }}
         />
       </Stack.Group>
-
-      <Stack.Screen
-        name="Drawer"
-        component={DrawerNavigator}
-        options={{ headerShown: false }}
-      />
     </Stack.Navigator>
   );
 };
 
 const AddBeneficiaryStackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="Add Beneficiary">
+    <Stack.Navigator
+      initialRouteName="Add Beneficiary"
+      screenOptions={{ headerShown: false }}
+    >
       <Stack.Group>
-        <Stack.Screen
-          name="Add Beneficiary"
-          component={AddBeneficiaryScreen}
-          options={{ headerShown: false }}
-        />
+        <Stack.Screen name="Add Beneficiary" component={AddBeneficiaryScreen} />
         <Stack.Screen
           name="Children 6-59 Months"
           component={Children659MScreen}
@@ -102,4 +99,100 @@ const AddBeneficiaryStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator, AddBeneficiaryStackNavigator };
+const InventoryRequestStackNavigator = () => {
+  return (
+    <Stack.Navigator
+      initialRouteName="Inventory Request"
+      screenOptions={{
+        headerTitleStyle: {
+          fontFamily: "Poppins-SemiBold",
+        },
+        headerTitleAlign: "center",
+        headerLeft: () => <CustomHeaderBackButton color="black" />,
+      }}
+    >
+      <Stack.Screen
+        name="Inventory Request"
+        component={InventoryRequestScreen}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const CounselingStackNavigator = () => {
+  return (
+    <Stack.Navigator
+      initialRouteName="Counseling"
+      screenOptions={{
+        headerTitleStyle: {
+          fontFamily: "Poppins-SemiBold",
+        },
+        headerTitleAlign: "center",
+        headerLeft: () => <CustomHeaderBackButton color="black" />,
+      }}
+    >
+      <Stack.Screen name="Counseling" component={CounselingScreen} />
+    </Stack.Navigator>
+  );
+};
+
+const ChangePasswordStackNavigator = () => {
+  return (
+    <Stack.Navigator
+      initialRouteName="Change Password"
+      screenOptions={{
+        headerTitleStyle: {
+          fontFamily: "Poppins-SemiBold",
+        },
+        headerTitleAlign: "center",
+        headerLeft: () => <CustomHeaderBackButton color="black" />,
+      }}
+    >
+      <Stack.Screen name="Change Password" component={ChangePasswordScreen} />
+    </Stack.Navigator>
+  );
+};
+
+const AboutStackNavigator = () => {
+  return (
+    <Stack.Navigator
+      initialRouteName="About Us"
+      screenOptions={{
+        headerTitleStyle: {
+          fontFamily: "Poppins-SemiBold",
+        },
+        headerTitleAlign: "center",
+        headerLeft: () => <CustomHeaderBackButton color="black" />,
+      }}
+    >
+      <Stack.Screen name="About Us" component={AboutUsScreen} />
+    </Stack.Navigator>
+  );
+};
+
+const ContactStackNavigator = () => {
+  return (
+    <Stack.Navigator
+      initialRouteName="Contact Us"
+      screenOptions={{
+        headerTitleStyle: {
+          fontFamily: "Poppins-SemiBold",
+        },
+        headerTitleAlign: "center",
+        headerLeft: () => <CustomHeaderBackButton color="black" />,
+      }}
+    >
+      <Stack.Screen name="Contact Us" component={ContactUsScreen} />
+    </Stack.Navigator>
+  );
+};
+
+export {
+  MainStackNavigator,
+  AddBeneficiaryStackNavigator,
+  InventoryRequestStackNavigator,
+  CounselingStackNavigator,
+  ChangePasswordStackNavigator,
+  AboutStackNavigator,
+  ContactStackNavigator,
+};

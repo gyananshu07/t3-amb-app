@@ -6,7 +6,7 @@ import { FAB, Text, Provider as PaperProvider } from "react-native-paper";
 
 import CustomModal from "../../components/InventoryRequest/CustomModal";
 
-const RegisterComplaintScreen = () => {
+const InventoryRequestScreen = () => {
   const [visible, setVisible] = React.useState(false);
 
   const showModal = () => setVisible(!visible);
@@ -32,4 +32,4 @@ const RegisterComplaintScreen = () => {
   );
 };
 
-export default RegisterComplaintScreen;
+export default InventoryRequestScreen;
